@@ -1,11 +1,7 @@
 package problems;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 // DIFFICULTY   : Easy
-// TOPICS       :
+// TOPICS       : Two Pointers, String
 public class ReverseVowelsOfAString345 {
     public static void main(String[] args) {
         System.out.printf("REVERSED STRING: %s%n", reverseVowels("IceCreAm"));

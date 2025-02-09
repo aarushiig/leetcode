@@ -16,8 +16,8 @@ public class ReverseLinkedList206 {
     /* CONSTRAINTS: The number of nodes in the list is the range [0, 5000].
                     -5000 <= Node.val <= 5000 */
 
-    // TIME COMPLEXITY  :O(n)
-    // SPACE COMPLEXITY :O(1)
+    // TIME COMPLEXITY  : O(n)
+    // SPACE COMPLEXITY : O(1)
     private static ListNode reverseListInPlace(ListNode head) {
         if (head == null || head.next == null) return head;
 

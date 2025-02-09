@@ -41,7 +41,7 @@ public class RotateArray189 {
                     -2^31 <= nums[i] <= 2^31 -1
                     0 <= k <= 10^5 */
 
-    // TIME COMPLEXITY  :O(n)
+    // TIME COMPLEXITY  : O(n)
     // SPACE COMPLEXITY : O(n)
     private static void rotateUsingAdditionalArray(int[] nums, int k) {
         if (k == 0) return;

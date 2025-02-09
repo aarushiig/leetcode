@@ -16,7 +16,7 @@ public class ValidAnagram242 {
                     s and t consist of lowercase English letters. */
 
     // TIME COMPLEXITY  : O(n)
-    // SPACE COMPLEXITY :O(n)
+    // SPACE COMPLEXITY : O(n)
     private static boolean isAnagramUsingFrequencyArrays(String s, String t) {
         if (s.length() != t.length()) return false;
 
@@ -39,7 +39,7 @@ public class ValidAnagram242 {
     }
 
     // TIME COMPLEXITY  : O(n)
-    // SPACE COMPLEXITY :O(n)
+    // SPACE COMPLEXITY : O(n)
     private static boolean isAnagramUsingHashMaps(String s, String t) {
         if (s.length() != t.length()) return false;
 
@@ -57,7 +57,7 @@ public class ValidAnagram242 {
     }
 
     // TIME COMPLEXITY  : O(n.logn)
-    // SPACE COMPLEXITY :O(n)
+    // SPACE COMPLEXITY : O(n)
     private static boolean isAnagramUsingSorting(String s, String t) {
         if (s.length() != t.length()) return false;
 
