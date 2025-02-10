@@ -40,6 +40,8 @@ public class ReverseLinkedList206 {
         return previous;
     }
 
+    // TIME COMPLEXITY  : O(n)
+    // SPACE COMPLEXITY : O(1)
     private static ListNode reverseListUsingRecursion(ListNode head) {
         if (head == null || head.next == null) return head;
 
