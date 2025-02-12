@@ -10,10 +10,19 @@ import static utility.LinkedListUtilities.getLinkedListAsString;
 public class MergeTwoSortedLists21 {
     public static void main(String[] args) {
         System.out.printf("MERGED LISTS: %s%n", getLinkedListAsString(mergeTwoListsByIteration(generateLinkedListFromArray(new Integer[]{1, 2, 4}), generateLinkedListFromArray(new Integer[]{1, 3, 4}))));
+        System.out.printf("MERGED LISTS: %s%n%n", getLinkedListAsString(mergeTwoListsByRecursion(generateLinkedListFromArray(new Integer[]{1, 2, 4}), generateLinkedListFromArray(new Integer[]{1, 3, 4}))));
+
         System.out.printf("MERGED LISTS: %s%n", getLinkedListAsString(mergeTwoListsByIteration(generateLinkedListFromArray(new Integer[]{1, 2, 4, 5, 6, 7, 8}), generateLinkedListFromArray(new Integer[]{1, 3, 4, 9, 9, 15}))));
+        System.out.printf("MERGED LISTS: %s%n%n", getLinkedListAsString(mergeTwoListsByRecursion(generateLinkedListFromArray(new Integer[]{1, 2, 4, 5, 6, 7, 8}), generateLinkedListFromArray(new Integer[]{1, 3, 4, 9, 9, 15}))));
+
         System.out.printf("MERGED LISTS: %s%n", getLinkedListAsString(mergeTwoListsByIteration(generateLinkedListFromArray(new Integer[0]), generateLinkedListFromArray(new Integer[]{0}))));
+        System.out.printf("MERGED LISTS: %s%n%n", getLinkedListAsString(mergeTwoListsByRecursion(generateLinkedListFromArray(new Integer[0]), generateLinkedListFromArray(new Integer[]{0}))));
+
         System.out.printf("MERGED LISTS: %s%n", getLinkedListAsString(mergeTwoListsByIteration(generateLinkedListFromArray(new Integer[]{0}), generateLinkedListFromArray(new Integer[0]))));
+        System.out.printf("MERGED LISTS: %s%n%n", getLinkedListAsString(mergeTwoListsByRecursion(generateLinkedListFromArray(new Integer[]{0}), generateLinkedListFromArray(new Integer[0]))));
+
         System.out.printf("MERGED LISTS: %s%n", getLinkedListAsString(mergeTwoListsByIteration(generateLinkedListFromArray(new Integer[0]), generateLinkedListFromArray(new Integer[0]))));
+        System.out.printf("MERGED LISTS: %s%n", getLinkedListAsString(mergeTwoListsByRecursion(generateLinkedListFromArray(new Integer[0]), generateLinkedListFromArray(new Integer[0]))));
 
     }
 
@@ -54,5 +63,20 @@ public class MergeTwoSortedLists21 {
         currentNode.next = (list1 != null) ? list1 : list2;
 
         return head;
+    }
+
+    // TIME COMPLEXITY  : O(m + n)
+    // SPACE COMPLEXITY : O(m + n)
+    private static ListNode mergeTwoListsByRecursion(ListNode list1, ListNode list2) {
+        if (list1 == null) return list2;
+        if (list2 == null) return list1;
+
+        if (list1.val <= list2.val) {
+            list1.next = mergeTwoListsByRecursion(list1.next, list2);
+            return list1;
+        } else {
+            list2.next = mergeTwoListsByRecursion(list1, list2.next);
+            return list2;
+        }
     }
 }
